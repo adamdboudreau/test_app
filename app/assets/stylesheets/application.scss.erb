@@ -1,0 +1,18 @@
+//#@import "app/assets/#{APP_NAME}/stylesheets/main";
+//@import "#{APP_NAME}/main";
+//@import "#{APP_NAME}/main";
+
+// Can specify application specific subdirectory of css to import
+// Downside => need to load all application css if implemented this way
+@import "<%= APP_NAME %>/main";
+
+
+
+// Cannot load css from application subdirectory in assets
+//@import "app/assets/<%= APP_NAME %>/stylesheets/main2";
+//@import "./<%= APP_NAME %>/stylesheets/main2";
+
+// Can specify certain css to import this way !
+@import "<%= Rails.root.join("app", "assets", APP_NAME, "stylesheets", "main2") %>";
+
+// Rails.application.config.assets.paths << Rails.root.join("app", "assets", app_name, "stylesheets")
